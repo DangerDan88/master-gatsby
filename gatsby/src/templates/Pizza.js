@@ -1,12 +1,20 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-// TODO figure out how to display data about single pizza for page from graphql query without watching the video
-export default function SinglePizzaPage({ pizza }) {
+export default function SinglePizzaPage({ data }) {
+  const { pizza } = data;
   console.log(pizza);
-  console.log('pizza');
 
-  return <p>Single Pizza</p>;
+  return (
+    <div>
+      {pizza.name}
+      <p>{pizza.toppings.map((topping) => topping.name).join(', ')}</p>
+      <div>
+        <Img fluid={pizza.image.asset.fluid} />
+      </div>
+    </div>
+  );
 }
 
 export const query = graphql`
