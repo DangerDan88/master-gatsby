@@ -1,6 +1,6 @@
 import path from 'path';
 import fetch from 'isomorphic-fetch';
-// TODO query all the beers and display to the a beer page
+// TODO query all the beers and display to the a beer page this is a challenge
 async function turnPizzasIntoPages({ graphql, actions }) {
   // 1. Get a template for this page
   const pizzaTemplate = path.resolve('./src/templates/Pizza.js');
